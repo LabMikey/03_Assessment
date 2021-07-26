@@ -1,7 +1,7 @@
 # Checks for an integer more than 0
 def float_check(question):
 
-    error = "Please enter a whole number that is more than 0"
+    error = "Please enter a whole number that is more than 99 grams"
 
     valid = False
     while not valid:
@@ -10,7 +10,7 @@ def float_check(question):
         try:
             response = float(input(question))
 
-            if response <= 0:
+            if response <= 99:
                 print(error)
             else:
                 return response
@@ -19,5 +19,10 @@ def float_check(question):
         except ValueError:
             print(error)
 
+
+
 #Main rountine
-weight = float_check ("Weight: ")
+weight = float_check ("Weight(Grams): ")
+
+if weight < 100:
+    print()

@@ -1,6 +1,6 @@
 # function goes here
 
-def int_check(question, low_num, high_num):
+def float_check(question, low_num, high_num):
 
     error = "Please enter a whole number between {} " \
             "and {}".format(low_num, high_num)
@@ -8,9 +8,9 @@ def int_check(question, low_num, high_num):
     valid = False
     while not valid:
 
-       # ask user for number and chec it is valid
+       # ask user for Budget and check it is valid
         try:
-            response = int(input(question))
+            response = float(input(question))
 
             if low_num < response < high_num:
                 return response
@@ -23,4 +23,4 @@ def int_check(question, low_num, high_num):
 
 
 # main routine goes here
-budget = int_check("Budget: ", 0, 200)
+budget = float_check("Budget: ", 0, 20)
