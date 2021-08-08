@@ -29,6 +29,7 @@ budget = float_check("Budget: ", 0, 20)
 # Unit price conversion
 # Functions
 def print_menu():
+    print()
     print('Grams to Kilograms')
 
 def num_check(question, error, num_type):
@@ -59,3 +60,5 @@ item = unit_cost()
 print(item)
 if budget <(item):
     print('Sorry you have insufficient funds.' )
+
+

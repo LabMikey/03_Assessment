@@ -12,6 +12,8 @@ def int_check(question):
 
             if response <= 10:
                 print(error)
+            else:
+                return(response)
 
         # if an integer is not entered, display an error message
         except ValueError:
@@ -20,6 +22,8 @@ def int_check(question):
 #Main rountine
 weight = int_check ("Weight(Grams): ")
 print("The weight is {}".format(weight))
+
+cost = int_check("Cost: $")
 
 # if weight < 100:
 #     print()
