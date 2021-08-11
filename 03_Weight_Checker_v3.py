@@ -33,7 +33,6 @@ def not_blank(question, error):
 
 
 
-
 weight = num_check ("Weight(Grams): ", "Please enter a number more than 10", int, 10)
 print("The weight is {}".format(weight))
 cost = num_check("Cost: $", "Please enter a valid number", float, 0)

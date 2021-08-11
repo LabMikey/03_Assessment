@@ -31,6 +31,6 @@ def unit_cost():
 
 print_menu()
 item = unit_cost()
-print(item)
+print("$", item, "per kilo")
 
 
