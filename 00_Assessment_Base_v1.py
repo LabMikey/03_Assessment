@@ -102,7 +102,13 @@ while item_name.lower() != "xxx":
     all_items.append(item_name)
     all_weight.append(weight)
     all_cost.append(cost)
-    all_unit_cost.append("${:.2f} per kilo".fomatunit_price)
+    all_unit_cost.append("${:.2f} per kilo".format)
 
 movie_frame = pandas.DataFrame(Price_tool_dict)
+
+movie_frame["Snack"] = item_name
+movie_frame["Weight"] = weight
+movie_frame["total"] = unit_price
+
 print(movie_frame)
+
