@@ -1,29 +1,30 @@
-def float_check(question):
+def float_check(question, low_num, high_num):
 
-    error = "Please enter a whole number that is more than 0"
+    error = "Please enter a whole number between {} " \
+            "and {}".format(low_num, high_num)
 
     valid = False
     while not valid:
 
-        # ask user for number and check it is valid
+       # ask user for Budget and check it is valid
         try:
             response = float(input(question))
 
-            if response <= 0:
-                print(error)
-            else:
+            if low_num < response < high_num:
                 return response
+            else:
+                print(error)
 
-        # if an integer is not entered, display an error message
+       # If an interger is not entered, display an error
         except ValueError:
             print(error)
 
-tool_list_1 =[["Sea Salt Crakers", "$2"]]
-tool_list_2 =[["Griffins Snax", "$2.5"]]
-tool_list_3 =[["Pizza Shapes", "$3.3"]]
-tool_list_4 =[["Arnotts Cheds", "$3.99"]]
-tool_list_5 =[["Rosemary Wheat", "$2"]]
-tool_list_6 =[["Orginal Rice Crakers", "$1.65"]]
+tool_list_1 =[["Sea Salt Crakers", 2]]
+tool_list_2 =[["Griffins Snax", 2.5]]
+tool_list_3 =[["Pizza Shapes", 3.3]]
+tool_list_4 =[["Arnotts Cheds", 3.99]]
+tool_list_5 =[["Rosemary Wheat", 2]]
+tool_list_6 =[["Orginal Rice Crakers", 1.65]]
 
 
 budget = float_check("Budget: ")  # replace with functions

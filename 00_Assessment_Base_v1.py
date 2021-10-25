@@ -40,26 +40,69 @@ def num_check(question, error, num_type, lowest):
         except ValueError:
             print(error)
 
+def not_blank(question):
+    valid = False
+
+    while not valid:
+        response = input(question)
+
+        # If name is not blank, program continues
+        if response != "":
+            return response
+
+        # If name is blank, show error (& repeat loop)
+        else:
+            print("Sorry - this can’t be blank, "
+                 "please enter your name")
+
+
+
 # main routine goes here
-budget = float_check("Budget: ", 0, 20)
+budget = float_check("Budget: ", 0, 100)
 
-# Unit price conversion
-# Functions
-def print_menu():
+# Column set up
+all_items = []
+all_weight = []
+all_cost = []
+all_unit_cost = []
+
+# table set up
+Price_tool_dict = {
+    'Items': all_items,
+    'weight': all_weight,
+    'Cost': all_cost,
+    'Unit Price': all_unit_cost
+}
+
+# Loop to get the Item name
+item_name = ""
+
+while item_name.lower() != "xxx":
     print()
-    print()
 
+    # Get name of item
+    item_name = not_blank("Item Name: ")
+    # End loop if the exit code is entered
+    if item_name == "xxx":
+        break
 
-weight = num_check ("Weight(Grams): ", "Please enter a number more than 10", int, 10)
-print("The weight is {}".format(weight))
-cost = num_check("Cost: $", "Please enter a valid number", float, 0)
-print("The cost is ${} in grams". format(cost))
-# weight has been changed to kilograms here
-unit_price = cost / (weight / 1000)
-print("$", unit_price, "Per Kilo")
+    # Unit price conversion
+    weight = num_check ("Weight(Grams): ", "Please enter a number more than 10", int, 10)
+    print("The weight is {}".format(weight))
+    cost = num_check("Cost: $", "Please enter a valid number", float, 0)
+    print("The cost is ${} in grams". format(cost))
+    # weight has been changed to kilograms here
+    unit_price = cost / (weight / 1000)
+    print("${:.2f} per kilo".format(unit_price))
 
-print (print_menu())
-if budget <(unit_price):
-    print('Sorry you have insufficient funds.' )
+    print("\n\n")
+    if budget < unit_price:
+        print('Sorry you have insufficient funds.' )
 
+    all_items.append(item_name)
+    all_weight.append(weight)
+    all_cost.append(cost)
+    all_unit_cost.append("${:.2f} per kilo".fomatunit_price)
 
+movie_frame = pandas.DataFrame(Price_tool_dict)
+print(movie_frame)
