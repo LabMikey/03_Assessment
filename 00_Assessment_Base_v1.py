@@ -96,19 +96,36 @@ while item_name.lower() != "xxx":
     print("${:.2f} per kilo".format(unit_price))
 
     print("\n\n")
-    if budget < unit_price:
+    if budget < cost:
         print('Sorry you have insufficient funds.' )
+
+    #print("item: ", item_name)
+    #print("weight: ", weight)
+    #print("cost: ", cost)
+    #print("unit price", unit_price)
+
+    #print()
 
     all_items.append(item_name)
     all_weight.append(weight)
     all_cost.append(cost)
-    all_unit_cost.append("${:.2f} per kilo".format)
+    # all_unit_cost.append("${:.2f} per kilo".format)
+    #unit_price = "${:.2f}".format(unit_price)
+    all_unit_cost.append(unit_price)
+    recommended_price = 
+
+    #print("all items list", all_items)
+    #print("all costs list", all_cost)
+    #print("all unit cost list", all_unit_cost)
+
+    #print()
 
 movie_frame = pandas.DataFrame(Price_tool_dict)
 
-movie_frame["Snack"] = item_name
-movie_frame["Weight"] = weight
-movie_frame["total"] = unit_price
+# movie_frame["Snack"] = item_name
+# movie_frame["Weight"] = weight
+# movie_frame["total"] = unit_price
 
 print(movie_frame)
+
 
